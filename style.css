@@ -1,0 +1,218 @@
+/* ========================================
+Reset & Base Styles
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ========================================
+Navbar
+======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #FF8228;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #dfcfbc;
+  transform: scale(1.1);
+}
+
+/* ========================================
+Hero Section
+======================================== */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #353535, #eee);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+/* ========================================
+Hero Content Wrapper
+======================================== */
+.content-wrapper-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  border: 3px solid #FF8228;
+}
+
+.left-section-hero,
+.right-section-hero {
+  flex: 1;
+  padding: 2rem;
+}
+
+.logo-image {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.company-name {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+/* ========================================
+About Page Section
+======================================== */
+
+.about-section {
+  padding: 2rem ;
+}
+
+.content-wrapper-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1800px;
+  margin: 0 auto;
+  width: 90%;
+  border: 3px solid #FF8228;
+  padding: 3rem;
+}
+
+.left-section-about,
+.right-section-about {
+  flex: 1;
+  padding: 2rem;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+/* ========================================
+Shop Page Section
+======================================== */
+.page-section {
+  padding: 100px 2rem 2rem; 
+  max-width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.page-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fffdfd;
+}
+
+.product-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem; 
+}
+
+.product-card {
+  background-color: #fcf5ef;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #FF8228;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #555;
+}
