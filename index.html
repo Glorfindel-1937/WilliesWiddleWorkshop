@@ -1,36 +1,284 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
+  <title>Willies Widdle Workshop</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      padding-top: 4rem;
+    }
+  </style>
 </head>
+
 <body>
+
   <nav class="navbar">
     <div class="logo">MyLogo</div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a style="border: 2px solid #FF8228; padding: 6px 12px;" href="mailto:youremail@example.com?">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#shop">Creations</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="hero-section">
-  <div class="content-wrapper-hero">
-    <div class="left-section-hero">
-      <img src="logo.png" alt="Logo" class="logo-image" />
-      <h1 class="company-name">Willies Widdle Workshop</h1>
+  <header id="home" class="hero-section">
+    <div class="content-wrapper-hero">
+      <div class="left-section-hero">
+        <img src="logo.png" alt="Logo" class="logo-image" />
+        <h1 class="company-name">Willies Widdle Workshop</h1>
+      </div>
+      <div class="divider"></div>
+      <div class="right-section-hero">
+        <img src="your-image.jpg" alt="Your work example" class="hero-image" />
+        <p class="hero-description">
+          I specialize in wood working.
+        </p>
+      </div>
     </div>
-    <div style="width: 3px; height: 85%; margin-bottom: 20px; background-color: #FF8228;"></div>
-    <div class="right-section-hero">
-      <img src="your-image.jpg" alt="Your work example" class="hero-image" />
-      <p class="hero-description">
-        I specialize in wood working.
-      </p>
+  </header>
+
+  <section id="about" class="about-section">
+    <div class="content-wrapper-about">
+      <div class="images-section-about">
+        <img src="images/grandparents.jpg" class="about-image">
+        <img src="images/grandparents.jpg" class="about-image">
+        <img src="images/grandparents.jpg" class="about-image">
+      </div>
+      <div class="divider"></div>
+      <div class="text-section-about">
+        <h1>Inspiration</h1>
+        <p class="about-description">
+         I am nothing without the people who helped me get to where I am today, especially my grandparents who let me work in their shop when I was younger. Being able to carry on a form of woodworking using my grandfather’s tools means everything to me, and I wish to share the joy it brings me by creating things for others.
+        </p>
+      </div>
+    </div>
+
+    <div class="content-wrapper-about" style="margin-top: 2rem;">
+      <div class="text-section-about">
+        <h1>What I Do, Where I Work</h1>
+        <p class="about-description">
+         I currently have a full-time job, but in my free time after work, I spend time woodworking in my grandparents' garage, fulfilling unique and challenging requests from friends and family. To see what I’ve created so far, check out my collection below!
+        </p>
+      </div>
+      <div class="divider"></div>
+      <div class="images-section-about">
+        <img src="images/work.jpg" class="about-image">
+        <img src="images/work.jpg" class="about-image">
+        <img src="images/work.jpg" class="about-image">
+      </div>
+    </div>
+  </section>
+
+  
+<section id="shop">
+  <h2 class="text-column">If you see something you are interested in here, contact me at any method on the bottom of the screen!</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Minnesota Cutting Board</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <!-- Product 2 (copy this block for more products) -->
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Paddle Cutting Board</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Leaf Cutting Board</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>End Grain Cutting Board</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Oak Dresser</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Jewlery Box</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
     </div>
   </div>
-  </header>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Palm Rest</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Computer Stand</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Table Card Slider</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Samuri Sword Holder</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="image-column">
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+          <img src="images/Past work/Minnesota 1.jpg" >
+        </div>
+        <div class="text-column">
+          <h2>Blanket Ladder</h2>
+          <p>Handcrafted from local wood. Durable and beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+
+  <section id="contact" class="contact-section">
+  <h1>Contact</h1>
+  <p class="contact-item">
+    <strong>Name:</strong> William Magarian
+
+  </p>
+  <p class="contact-item">
+    <strong>Email:</strong>
+    <a href="mailto:williewiddleworkshop@outlook.com">williewiddleworkshop@outlook.com</a>
+  </p>
+  <p class="contact-item">
+    <strong>Instagram:</strong>
+    <a href="https://www.instagram.com/williewiddleworkshop" target="_blank">@willies-Instagram</a>
+  </p>
+  <p class="contact-item">
+    <strong>LinkedIn:</strong>
+    <a href="https://www.linkedin.com/in/will-magarian-b6190922a" target="_blank">@willies-LinkedIn</a>
+  </p>
+  </section>
+
+
+
+<script>
+
+const carousels = document.querySelectorAll('.carousel-track');
+  const intervalTime = 8000; // 8 seconds between slides
+  const delayBetweenCarousels = 4000; // 4 seconds delay between each carousel
+
+  carousels.forEach((track, i) => {
+    let index = 0;
+
+    setTimeout(() => {
+      setInterval(() => {
+        index = (index + 1) % track.children.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }, intervalTime);
+    }, i * delayBetweenCarousels); // stagger start
+  });
+</script>
+
+
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      const offset = target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2);
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

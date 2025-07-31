@@ -1,3 +1,4 @@
+
 /* ========================================
 Reset & Base Styles
 ======================================== */
@@ -10,11 +11,16 @@ Reset & Base Styles
 html, body {
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: #fff;
 }
 
@@ -59,37 +65,36 @@ Hero Section
 ======================================== */
 .hero-section {
   height: 100vh;
-  background: linear-gradient(to bottom right, #353535, #eee);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 4rem;
   text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+  background-color: #ffffff;
 }
 
 .hero-section h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .hero-section p {
   font-size: 1.2rem;
 }
 
-/* ========================================
-Hero Content Wrapper
-======================================== */
-.content-wrapper-hero {
+.content-wrapper-hero,
+.content-wrapper-about {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1400px;
   height: 90%;
-  width: 90%;
-  max-width: 1800px;
   margin: 0 auto;
-  padding: 3rem 0;
   border: 3px solid #FF8228;
+  box-sizing: border-box;
+
 }
 
 .left-section-hero,
@@ -121,31 +126,24 @@ Hero Content Wrapper
   font-size: 1.1rem;
   color: #ddd;
 }
+
 /* ========================================
-About Page Section
+About Section
 ======================================== */
-
 .about-section {
-  padding: 2rem ;
+  padding: 2rem;
+  background-color: #555;
 }
 
-.content-wrapper-about {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1800px;
-  margin: 0 auto;
-  width: 90%;
-  border: 3px solid #FF8228;
-  padding: 3rem;
-}
-
-.left-section-about,
-.right-section-about {
+.images-section-about,
+.text-section-about {
   flex: 1;
   padding: 2rem;
 }
-
+.images-section-about{ 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 .about-image {
   width: 100%;
   max-width: 400px;
@@ -159,60 +157,103 @@ About Page Section
   line-height: 1.6;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
 /* ========================================
-Shop Page Section
+Shop Section
 ======================================== */
-.page-section {
-  padding: 100px 2rem 2rem; 
-  max-width: 70%;
-  margin: auto;
+.carousel {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track holds all product cards in a row */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Each product card spans full screen width and uses horizontal layout */
+.product-card {
+  flex: 0 0 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: transparent;
+  gap: 2rem;
+}
+
+/* Left side: image column */
+.image-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+/* Right side: text column */
+.text-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.page-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #fffdfd;
-}
-
-.product-grid {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 2rem; 
-}
-
-.product-card {
-  background-color: #fcf5ef;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
+/* Title styling */
+.text-column h2 {
+  font-size: 2rem;
+  color: #FF8228;
   margin-bottom: 1rem;
 }
 
-.product-card h2 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+/* Description styling */
+.text-column p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Image styling */
+.image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* ========================================
+Contact Section
+======================================== */
+
+.contact-section {
+  padding: 100px 2rem 2rem;
+  text-align: center;
+  background-color: #555;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.contact-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: #FF8228;
 }
 
-.product-card p {
-  font-size: 1rem;
-  color: #555;
+.contact-item {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
+
+.contact-item a {
+  color: #FF8228;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
