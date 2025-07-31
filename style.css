@@ -60,6 +60,35 @@ Navbar
   transform: scale(1.1);
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #222;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 10%;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.hamburger {
+  display: block;
+}
+
+
+
 /* ========================================
 Hero Section
 ======================================== */
