@@ -61,10 +61,11 @@ Navbar
 }
 
 .hamburger {
-  display: none;
+  display: block;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
+  right: 1rem;
 }
 
 .nav-links {
@@ -72,19 +73,19 @@ Navbar
   flex-direction: column;
   background-color: #222;
   position: absolute;
-  top: 60px;
-  right: 0;
-  width: 10%;
-  padding: 1rem 2rem;
+  top: 60px; 
+  right: 1rem;
+  width: 200px; 
+  padding: 1rem;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 999;
 }
 
 .nav-links.active {
   display: flex;
-}
-
-.hamburger {
-  display: block;
 }
 
 
