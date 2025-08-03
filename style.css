@@ -1,4 +1,3 @@
-
 /* ========================================
 Reset & Base Styles
 ======================================== */
@@ -16,6 +15,11 @@ html, body {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
@@ -46,8 +50,22 @@ Navbar
 
 .nav-links {
   list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: #222;
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  width: 200px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  z-index: 999;
+}
+
+.nav-links.active {
   display: flex;
-  gap: 1.5rem;
 }
 
 .nav-links li a {
@@ -67,28 +85,6 @@ Navbar
   cursor: pointer;
   right: 1rem;
 }
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-  background-color: #222;
-  position: absolute;
-  top: 60px; 
-  right: 1rem;
-  width: 200px; 
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  box-sizing: border-box;
-  z-index: 999;
-}
-
-.nav-links.active {
-  display: flex;
-}
-
-
 
 /* ========================================
 Hero Section
@@ -119,12 +115,10 @@ Hero Section
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1800px;
   height: 90%;
   margin: 0 auto;
   border: 3px solid #FF8228;
-  box-sizing: border-box;
-
 }
 
 .left-section-hero,
@@ -170,10 +164,13 @@ About Section
   flex: 1;
   padding: 2rem;
 }
-.images-section-about{ 
+
+.images-section-about {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
+
 .about-image {
   width: 100%;
   max-width: 400px;
@@ -196,14 +193,12 @@ Shop Section
   position: relative;
 }
 
-/* Track holds all product cards in a row */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
 
-/* Each product card spans full screen width and uses horizontal layout */
 .product-card {
   flex: 0 0 100vw;
   display: flex;
@@ -211,12 +206,9 @@ Shop Section
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  box-sizing: border-box;
-  background-color: transparent;
   gap: 2rem;
 }
 
-/* Left side: image column */
 .image-column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -226,7 +218,6 @@ Shop Section
   overflow: hidden;
 }
 
-/* Right side: text column */
 .text-column {
   flex: 1;
   display: flex;
@@ -235,30 +226,27 @@ Shop Section
   text-align: center;
 }
 
-/* Title styling */
 .text-column h2 {
   font-size: 2rem;
   color: #FF8228;
   margin-bottom: 1rem;
 }
 
-/* Description styling */
 .text-column p {
   font-size: 1rem;
   color: #333;
 }
 
-/* Image styling */
 .image-column img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* ========================================
 Contact Section
 ======================================== */
-
 .contact-section {
   padding: 100px 2rem 2rem;
   text-align: center;
@@ -287,3 +275,64 @@ Contact Section
   text-decoration: underline;
 }
 
+/* ========================================
+Responsive Design
+======================================== */
+@media (max-width: 768px) {
+  .content-wrapper-hero,
+  .content-wrapper-about,
+  .product-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-column {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: static;
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+
+  .text-column h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-column p {
+    font-size: 1rem;
+  }
+
+  .carousel-track {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      width: auto;
+    }
+  }
+}
