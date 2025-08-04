@@ -71,6 +71,8 @@ Navbar
 .nav-links li a {
   color: #FF8228;
   transition: color 0.3s, transform 0.3s;
+  padding: 0.75rem 1rem;
+  display: block;
 }
 
 .nav-links li a:hover {
@@ -189,18 +191,19 @@ Shop Section
 ======================================== */
 .carousel {
   width: 100vw;
-  overflow: hidden;
-  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
+  gap: 2rem;
 }
 
 .product-card {
   flex: 0 0 100vw;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -287,8 +290,18 @@ Responsive Design
     text-align: center;
   }
 
+  .product-card {
+    flex: 0 0 50vw; 
+    scroll-snap-align: start;
+  }
+
   .image-column {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    max-height: none;
+  }
+
+  .image-column img {
+    height: auto;
   }
 
   .nav-links {
@@ -305,34 +318,61 @@ Responsive Design
   }
 
   .text-column h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .text-column p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 0 1rem;
   }
 
   .carousel-track {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .product-card {
+    flex: 0 0 100%;
+    padding: 1rem;
+    gap: 1rem;
   }
 
   .hamburger {
     display: block;
   }
 
-  @media (min-width: 769px) {
-    .hamburger {
-      display: none;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    width: 200px;
+    background-color: #222;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
 
-    .nav-links {
-      display: flex !important;
-      position: static;
-      flex-direction: row;
-      background: none;
-      box-shadow: none;
-      padding: 0;
-      width: auto;
-    }
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
   }
 }

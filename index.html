@@ -246,21 +246,28 @@
 
 
 <script>
+const carousels = document.querySelectorAll('.carousel');
 
-const carousels = document.querySelectorAll('.carousel-track');
-  const intervalTime = 8000; // 8 seconds between slides
-  const delayBetweenCarousels = 4000; // 4 seconds delay between each carousel
+carousels.forEach((carousel, i) => {
+  const track = carousel.querySelector('.carousel-track');
+  const cards = track.children;
+  let index = 0;
+  const intervalTime = 8000;
+  const delayBetweenCarousels = 4000;
 
-  carousels.forEach((track, i) => {
-    let index = 0;
+  const isMobile = window.innerWidth <= 768;
+  const itemsPerView = isMobile ? 2 : 1;
 
-    setTimeout(() => {
-      setInterval(() => {
-        index = (index + 1) % track.children.length;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }, intervalTime);
-    }, i * delayBetweenCarousels); // stagger start
-  });
+  setTimeout(() => {
+    setInterval(() => {
+      index = (index + itemsPerView) % cards.length;
+      track.scrollTo({
+        left: cards[index].offsetLeft,
+        behavior: 'smooth'
+      });
+    }, intervalTime);
+  }, i * delayBetweenCarousels);
+});
 </script>
 
 
