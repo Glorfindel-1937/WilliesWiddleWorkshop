@@ -246,22 +246,22 @@ const carousels = document.querySelectorAll('.carousel');
 
 carousels.forEach((carousel, i) => {
   const track = carousel.querySelector('.carousel-track');
-  const cards = track.children;
-  let index = 0;
-  const intervalTime = 8000;
-  const delayBetweenCarousels = 4000;
-
-  const isMobile = window.innerWidth <= 768;
-  const itemsPerView = isMobile ? 2 : 1;
+  const scrollSpeed = 3; // pixels per frame
+  const delayBetweenCarousels = 5500;
 
   setTimeout(() => {
-    setInterval(() => {
-      index = (index + itemsPerView) % cards.length;
-      track.scrollTo({
-        left: cards[index].offsetLeft,
-        behavior: 'smooth'
-      });
-    }, intervalTime);
+    function scrollLoop() {
+      track.scrollLeft += scrollSpeed;
+
+      // Loop back to start when reaching the end
+      if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+        track.scrollLeft = 0;
+      }
+
+      requestAnimationFrame(scrollLoop);
+    }
+
+    scrollLoop();
   }, i * delayBetweenCarousels);
 });
 </script>

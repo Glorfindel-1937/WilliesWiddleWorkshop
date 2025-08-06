@@ -194,18 +194,21 @@ Shop Section
 .carousel {
   width: 100vw;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
   gap: 2rem;
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 .product-card {
-  flex: 0 0 100vw;
-  scroll-snap-align: start;
+  flex: 0 0 auto; 
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
