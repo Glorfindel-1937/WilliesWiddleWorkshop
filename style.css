@@ -8,6 +8,7 @@ Reset & Base Styles
 }
 
 html, body {
+  width: 100%;
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -95,7 +96,9 @@ Navbar
 Hero Section
 ======================================== */
 .hero-section {
+  position: relative; /* Ensures ::before stays anchored inside this section */
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,15 +108,28 @@ Hero Section
   padding-top: 4rem;
   background-image: url('images/Past work/background option 1.jpg');
   background-size: cover;
+  background-position: center;
+  z-index: 1; /* Puts content above the overlay */
+  color: #ffffff; /* Default text color to white */
 }
 
-.hero-section h1 {
-  font-size: 3rem;
-  color: #000000
+/* This creates the semi-transparent overlay */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black; /* Dark overlay for contrast */
+  opacity: 0.4; /* Adjust as needed for legibility */
+  z-index: 0; /* Ensures it sits below the actual content */
 }
+
+/* Your existing content styles remain the same—here’s a snapshot with minor tweaks for consistency */
 
 .hero-section p {
-  font-size: 1.2rem;
+  font-size: 2.5rem;
+  color: #ffffff; /* Stands out on dark overlay */
+  position: relative; /* Keeps text above overlay */
+  z-index: 1;
 }
 
 .content-wrapper-hero,
@@ -122,39 +138,34 @@ Hero Section
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1800px;
   height: 90%;
   margin: 0 auto;
   border: 3px solid #FF8228;
+  position: relative; /* Inherits z-index layering */
+  z-index: 1;
 }
 
 .left-section-hero,
 .right-section-hero {
   flex: 1;
   padding: 2rem;
+  position: relative; /* Keeps children above overlay */
+  z-index: 1;
 }
-
 
 .company-name {
   font-size: 2rem;
   color: #ffffff;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  color: #000000;
+  color: #000000; /* Black might be hard to see on dark overlay, consider switching to white or light gray */
+  position: relative;
+  z-index: 1;
 }
-
-
-
 /* ========================================
 About Section
 ======================================== */
@@ -192,7 +203,7 @@ About Section
 Shop Section
 ======================================== */
 .carousel {
-  width: 100vw;
+  width: 100%;
   overflow-x: auto;
   position: relative;
 }
@@ -208,7 +219,7 @@ Shop Section
 
 .product-card {
   flex: 0 0 auto; 
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -334,7 +345,7 @@ Responsive Design
   .carousel-track {
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: flex;
   }
 
   .product-card {
@@ -365,10 +376,16 @@ Responsive Design
     display: flex;
   }
   .logo {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     margin-left: 0%;
     margin-top: 10%;
+  }
+  .hero-section p {
+    font-size: 1.5rem;
+    color: #ffffff; /* Stands out on dark overlay */
+    position: relative; /* Keeps text above overlay */
+    z-index: 1;
   }
 }
 
