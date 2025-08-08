@@ -264,29 +264,57 @@ Shop Section
 }
 
 /* ========================================
-Contact Section
+Contact/Shipping/Payment Section
 ======================================== */
 .contact-section {
-  padding: 100px 2rem 2rem;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 100px 4rem 2rem;
   background-color: #555;
   color: #fff;
   font-family: Arial, sans-serif;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.contact-column {
+  flex: 1;
+  min-width: 250px;
 }
 
 .contact-section h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #FF8228;
 }
 
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .contact-item {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.large-icon {
+  height: 40px;
+  width: 40px;
 }
 
 .contact-item a {
-  color: #FF8228;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -386,6 +414,22 @@ Responsive Design
     color: #ffffff; /* Stands out on dark overlay */
     position: relative; /* Keeps text above overlay */
     z-index: 1;
+  }
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  .images-section-about {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-image {
+    width:100%;
+    max-width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    align-items: center;
   }
 }
 

@@ -19,7 +19,7 @@
 <body>
 
   <nav class="navbar">
-    <img id="ogo" style="height: 60px; width: 60px;" src="images/Logo/Orange.png">
+    <img id="ogo" style="height: 60px; width: 60px;" src="images/Logo/PNG/Orange.png">
     
 <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   <ul class="nav-links" id="navLinks">
@@ -33,7 +33,7 @@
 
   <header id="home" class="hero-section">
     <div class="content-wrapper-hero">
-      <img class="logo" src="images/Logo/WWhite.png" alt="Logo" >
+      <img class="logo" src="images/Logo/PNG/WWhite.png" alt="Logo" >
       <div class="right-section-hero">
         <p class="hero-description">
           Handcrafted<br>-------<br>Locally Sourced<br>-------<br>Making Ideas a Reality
@@ -67,7 +67,7 @@
       </div>
       <div class="divider"></div>
       <div class="images-section-about">
-        <img src="images/work.jpg" class="about-image">
+        <img src="images/About Page/New Shop.jpg" class="about-image">
         <img src="images/work.jpg" class="about-image">
         <img src="images/work.jpg" class="about-image">
       </div>
@@ -220,23 +220,46 @@
 </section>
 
 
-  
-
   <section id="contact" class="contact-section">
-  <h1>Contact</h1>
-  <p class="contact-item">
-    <strong>Email:</strong>
-    <a href="mailto:williewiddleworkshop@outlook.com">williewiddleworkshop@outlook.com</a>
-  </p>
-  <p class="contact-item">
-    <strong>Instagram:</strong>
-    <a href="https://www.instagram.com/williewiddleworkshop" target="_blank">@willies-Instagram</a>
-  </p>
-  <p class="contact-item">
-    <strong>LinkedIn:</strong>
-    <a href="https://www.linkedin.com/in/will-magarian-b6190922a" target="_blank">@willies-LinkedIn</a>
-  </p>
-  </section>
+  <!-- Contact Info -->
+  <div class="contact-column">
+    <h1>Contact</h1>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <img src="images/Misc/Email.png" alt="Email icon" class="contact-icon">
+        <a href="mailto:williewiddleworkshop@outlook.com">williewiddleworkshop@outlook.com</a>
+      </li>
+      <li class="contact-item">
+        <img src="images/Misc/Instagram.png" alt="Instagram icon" class="contact-icon">
+        <a href="https://www.instagram.com/williewiddleworkshop" target="_blank">@willies-Instagram</a>
+      </li>
+      <li class="contact-item">
+        <img src="images/Misc/Linked In.png" alt="LinkedIn icon" class="contact-icon large-icon">
+        <a href="https://www.linkedin.com/in/will-magarian-b6190922a" target="_blank">@willies-LinkedIn</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Delivery Info -->
+  <div class="contact-column">
+    <h1>Delivery Methods</h1>
+    <ul class="contact-list">
+      <li class="contact-item">Pick up at my address (Free!)</li>
+      <li class="contact-item">Ship to your house (Product + Shipping cost)</li>
+    </ul>
+  </div>
+
+  <!-- Payment Info -->
+  <div class="contact-column">
+    <h1>Payment Methods</h1>
+    <ul class="contact-list">
+      <li class="contact-item">Venmo @Will-Magarain-1</li>
+      <li class="contact-item">Cash upon pickup/delivery</li>
+      <li class="contact-item">Check (Preferred methods above)</li>
+    </ul>
+  </div>
+</section>
+
 
 
 
@@ -245,8 +268,8 @@ const carousels = document.querySelectorAll('.carousel');
 
 carousels.forEach((carousel, i) => {
   const track = carousel.querySelector('.carousel-track');
-  const scrollSpeed = 3; // pixels per frame
-  const delayBetweenCarousels = 5500;
+  const scrollSpeed = 2; // pixels per frame
+  const delayBetweenCarousels = 5000;
 
   setTimeout(() => {
     function scrollLoop() {
